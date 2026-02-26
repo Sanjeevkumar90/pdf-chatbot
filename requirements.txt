@@ -1,9 +1,7 @@
-streamlit==1.32.2
-langchain==0.1.16
-langchain-community==0.0.32
-langchain-core==0.1.42
-openai==1.14.3
-faiss-cpu==1.7.4
-pypdf==4.2.0
-tiktoken==0.6.0
-
+streamlit
+langchain
+langchain-community
+langchain-core
+faiss-cpu
+pypdf
+sentence-transformers
