@@ -38,4 +38,27 @@ else:
 
 
 st.success("✅ Vectorstore Ready!")
+from langchain.chains import RetrievalQA
+from langchain_community.llms import HuggingFaceHub
+
+# Load LLM (Free HF model)
+llm = HuggingFaceHub(
+    repo_id="google/flan-t5-base",
+    model_kwargs={"temperature": 0.5, "max_length": 512}
+)
+
+# Create QA chain
+qa = RetrievalQA.from_chain_type(
+    llm=llm,
+    retriever=vectorstore.as_retriever()
+)
+
+# Question Input Box
+query = st.text_input("💬 Ask a question about the PDF:")
+
+if query:
+    with st.spinner("Thinking..."):
+        result = qa.run(query)
+        st.write("### 📌 Answer:")
+        st.write(result)
 
