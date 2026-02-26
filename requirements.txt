@@ -1,8 +1,9 @@
 streamlit==1.32.2
 langchain==0.1.16
 langchain-community==0.0.32
-langchain-text-splitters==0.0.1
+langchain-core==0.1.42
+openai==1.14.3
 faiss-cpu==1.7.4
 pypdf==4.2.0
-huggingface-hub==0.20.3
-sentence-transformers==2.6.1
+tiktoken==0.6.0
+
