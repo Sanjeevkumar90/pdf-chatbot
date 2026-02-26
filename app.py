@@ -12,7 +12,7 @@ st.title("📄 PDF Chatbot")
 embeddings = HuggingFaceEmbeddings()
 
 # Load Fixed PDF
-pdf_path = "myfile.pdf"  # 🔥 Change this to your PDF name
+pdf_path = "pharma_dictionary.pdf" # 🔥 Change this to your PDF name
 
 loader = PyPDFLoader(pdf_path)
 documents = loader.load()
@@ -38,3 +38,4 @@ else:
 
 
 st.success("✅ Vectorstore Ready!")
+
