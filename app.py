@@ -11,7 +11,9 @@ st.set_page_config(page_title="PDF Chatbot", layout="wide")
 st.title("📄 PDF Chatbot")
 
 # Load Embedding Model
-embeddings = HuggingFaceEmbeddings()
+from langchain_openai import OpenAIEmbeddings
+
+embeddings = OpenAIEmbeddings()
 
 # Load Fixed PDF
 pdf_path = "pharma_dictionary.pdf"
@@ -59,5 +61,6 @@ if query:
         result = qa.run(query)
         st.write("### 📌 Answer:")
         st.write(result)
+
 
 
